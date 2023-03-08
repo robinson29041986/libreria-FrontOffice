@@ -1,0 +1,261 @@
+/* Aquí definimos las Custom properties */
+:root {
+  /* Colores */
+  --global--color-primary: #0c804f;
+  --global--color-secondary: #49b6ff;
+  --global--color-text: #6a707f;
+  --global--color-error: #f76d6d;
+  --global--color-warning: #ffd86f;
+  --global--color-succes: #2151ec;
+  --global--color-black: #000;
+  --global--color-white: #FFFFFF;
+  --global--color-background: #f8fafc;
+
+  /* Tipografía */
+  --global--font-primary: Inter, sans-serif;
+  --global--font-secondary: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.header_logo {
+  width: 90px;
+  height: 45px;
+  margin-left: auto;
+}
+
+.img-fluid:hover {
+  transform: scale(0.90);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.title {
+  font-size: 1.25rem;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 0px;
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: bold;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--global--color-primary);
+  color: var(--global--color-black);
+  border: 1px solid var(--global--color-primary);
+  border-radius: 12px;
+}
+
+.btn-secondary {
+  border: none;
+}
+
+.btn-warning {
+  background-color: var(--global--color-error);
+  color: #fff;
+  border: 1px solid var(--global--color-error);
+  border-radius: 12px;
+}
+
+.btn_logout {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  margin: 8px;
+  border-radius: 4px;
+  transition: 0.4s;
+  width: 90%;
+  color: #ea3b3b;
+  line-height: 1.6;
+  border: 0px;
+  cursor: pointer;
+}
+
+.btn_logout:hover {
+  background-color: #fef0f0;
+}
+
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.25);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 90;
+}
+
+
+.modal_wrapper {
+  background-color: var(--global--color-white);
+  width: min-content;
+  min-width: 300px;
+  max-width: 90vw;
+  border: 1px solid #e6edf4 !important;
+  border-radius: 16px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  overflow: hidden;
+  z-index: 99;
+  transition: all 0.8s ease-in-out;
+  transform: translate(-50%, -50%);
+}
+
+.modal_header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 24px 32px;
+  border-bottom: 1px solid #e6edf4;
+}
+
+.modal_icon {
+  background-color: var(--global--color-background);
+  width: 24px;
+  height: 24px;
+  padding: 4px;
+  color: var(--global--color-error);
+  border-radius: 2px;
+  cursor: pointer;
+
+}
+
+.modal_content {
+  padding: 24px 32px;
+}
+
+.display {
+  font-size: 1.25rem;
+  color: #000;
+}
+
+.lightbox-container .lightbox-img-thumbnail:first-child {
+  width: 80% !important;
+}
+
+.lightbox-container .lightbox-img-thumbnail {
+  width: 17% !important;
+  height: auto !important;
+  display: inline-block;
+  /* float: left; */
+  border: 1px solid #505050;
+  padding: 5px;
+  background-color: white;
+}
+
+.lightbox-backdrop.hide-controls div {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+@media (min-width: 992px) {
+  .product-details {
+    padding-left: 2rem;
+  }
+
+  .product-details.text-black {
+    border-left: 1px solid #00000040;
+  }
+
+  .product-details.text-light {
+    border-left: 1px solid #fcbc7365;
+  }
+}
+
+/* theme dark */
+.bg-black {
+  background-color: black;
+}
+
+.bg-light-black {
+  background-color: #262626 !important;
+}
+
+.text-black {
+  color: black;
+}
+
+.text-light-black {
+  color: #262626;
+}
+
+.bg-dark-primary {
+  background-color: #fcbc73 !important;
+}
+
+.text-dark-primary {
+  color: #fcbc73 !important;
+}
+
+/* theme light */
+.bg-light {
+  background-color: white;
+}
+
+.bg-light-2 {
+  background-color: #dadcde;
+}
+
+.bg-light-primary {
+  background-color: var(--global--color-primary) !important;
+  color: var(--global--color-black) !important;
+}
+
+.text-light-primary {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  color: #191659 !important;
+}
+
+
+.react-tel-input input {
+  width: 100% !important;
+}
+
+.user-menu .nav-item svg {
+  display: inline-block;
+}
+
+.user-menu .nav-pills .nav-link {
+  margin-bottom: .5rem;
+}
+
+.user-menu.bg-dark .nav-pills .nav-link:not(.active) {
+  border: 1px solid #FCBC73;
+  color: #FCBC73;
+}
+
+.user-menu.bg-light .nav-pills .nav-link:not(.active) {
+  border: 1px solid #54535c;
+  color: var(--global--color-black);
+}
+
+.user-menu.bg-dark .nav-pills .nav-link.active {
+  background-color: #FCBC73;
+  color: var(--global--color-text);
+}
+
+.user-menu.bg-light .nav-pills .nav-link.active {
+  background-color: #191654;
+  color: var(--global--color-background);
+}
