@@ -3,6 +3,7 @@ import { Button, Card } from 'react-bootstrap';
 import { useThemeHook } from '../GlobalComponents/ThemeProvider';
 import { useCart } from 'react-use-cart';
 import { BsCartPlus } from 'react-icons/bs';
+import { BiX } from 'react-icons/bi'
 import { Link } from "@reach/router";
 import '../assets/index.css'
 
@@ -24,8 +25,8 @@ const ProductCard = (props) => {
           background: 'white', height: '15rem', overflow: 'hidden', display: 'flex',
           justifyContent: 'center', alignItems: 'center', marginBottom: 'inherit'
         }}>
-          <div style={{ width: '20rem' }}>
-            <Card.Img variant="top" src={image} className="img-fluid" />
+          <div style={{ width: '10.5rem' }}>
+            <Card.Img variant="top" src={`http://localhost:5000/public/uploads/${image}`} className="img-fluid" />
           </div>
         </div>
       </Link>

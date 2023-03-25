@@ -12,15 +12,19 @@ const ProductDetails = (props) => {
   const [theme] = useThemeHook();
   const { addItem } = useCart();
 
-  useEffect(() => {
-    getResponse();
-  }, []);
-
   const getResponse = async () => {
     const res = await fetch(`http://localhost:5000/products/${props.productId}`)
       .then(res => res.json());
     setProductData(await res);
   }
+
+  var productImage = `http://localhost:5000/public/uploads/${productData.image}`
+
+
+  useEffect(() => {
+    getResponse();
+  });
+
   return (
     <Container className="py-5">
       <Row className="justify-content-center mt-5">
@@ -28,13 +32,26 @@ const ProductDetails = (props) => {
           <Lightbox
             images={[
               {
-                src: productData.image,
+                src: productImage,
               },
             ]}
           />
         </Col>
         <Col xs={10} md={7} lg={7} className={`${theme ? 'text-light' : 'text-black'} product-details`}>
           <h1>{productData.name}</h1>
+          <br />
+          <p className="mt-3 h5" style={{ opacity: '0.8', fontWeight: '400' }}>
+            {productData.description}
+          </p>
+          <br />
+          <b className={`${theme ? 'text-dark-primary' : 'text-light-primary'} h4 mt-3 d-block`}>
+            COP. {productData.price}
+          </b>
+          <br />
+          <b className={`${theme ? 'text-dark-primary' : 'text-light-primary'} h4 mt-3 d-block`}>
+            Categoria: {productData.category_id}
+          </b>
+          <br />
           <Button
             onClick={() => addItem(productData)}
             className={theme ? 'bg-dark-primary text-black' : 'bg-light-primary'}
@@ -43,19 +60,6 @@ const ProductDetails = (props) => {
             <BsCartPlus size="1.8rem" />
             Agregar al Carrito
           </Button>
-          <br />
-          <b className={`${theme ? 'text-dark-primary' : 'text-light-primary'} h4 mt-3 d-block`}>
-            COP. {productData.price}
-          </b>
-          <br />
-          <p className="mt-3 h5" style={{ opacity: '0.8', fontWeight: '400' }}>
-            {productData.description}
-          </p>
-          <br />
-          <b className={`${theme ? 'text-dark-primary' : 'text-light-primary'} h4 mt-3 d-block`}>
-            {productData.category}
-          </b>
-          <br />
         </Col>
       </Row>
     </Container>

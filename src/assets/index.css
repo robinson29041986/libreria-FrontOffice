@@ -149,7 +149,7 @@ code {
 }
 
 .lightbox-container .lightbox-img-thumbnail:first-child {
-  width: 80% !important;
+  width: 60% !important;
 }
 
 .lightbox-container .lightbox-img-thumbnail {
@@ -221,10 +221,11 @@ code {
 }
 
 .text-light-primary {
-  display: flex;
+  display: flexbox;
   align-items: center;
-  gap: 30px;
+  gap: 5px;
   color: #191659 !important;
+  margin-inline: 6px;
 }
 
 

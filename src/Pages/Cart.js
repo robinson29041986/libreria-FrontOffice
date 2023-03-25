@@ -31,7 +31,7 @@ const Cart = () => {
                       justifyContent: 'center', alignItems: 'center'
                     }}>
                       <div style={{ padding: '.5rem' }}>
-                        <img src={item.image} style={{ width: '8rem' }} alt={item.name} />
+                        <img src={`http://localhost:5000/public/uploads/${item.image}`} style={{ width: '8rem' }} alt={item.name} />
                       </div>
                     </div>
                   </td>
