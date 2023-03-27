@@ -1,32 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Button, Form, Spinner, InputGroup } from 'react-bootstrap';
 import { useThemeHook } from '../GlobalComponents/ThemeProvider';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/high-res.css';
 import Logo from '../assets/logo.png';
 
+
 const Register = () => {
+
   const [loading, setLoading] = useState(false);
   const [number, setNumber] = useState(null);
   const [theme] = useThemeHook();
 
-
   const handleSubmit = (event) => {
     const form = event.currentTarget;
     event.preventDefault();
-    const birthday = form.birthday.value;
-    const password = form.password.value;
-    const firstname = form.firstName.value;
-    const lastname = form.lastName.value;
+    const card = form.card.value;
+    const name = form.name.value;
     const email = form.email.value;
-    const cellphone = form.cellphone.value;
+    const birthday = form.birthday.value;
+    const phone = form.phone.value;
+    const address = form.address.value;
+    const password = form.password.value;
 
-    if (birthday && password && firstname && lastname && email && cellphone) {
+    if (card && name && email && birthday && phone && address && password) {
       setLoading(true);
       console.log('call api here');
-      console.log(birthday, password, firstname, lastname, email, cellphone);
+      console.log(card, name, email, birthday, phone, password);
     }
   }
+
   return (
     <Container className="py-5 mt-5">
       <Row className="justify-content-center mt-5">
@@ -40,17 +43,13 @@ const Register = () => {
               <Row>
                 <Form.Group className="mb-3 col-lg-6">
                   <Form.Label>Cedula</Form.Label>
-                  <Form.Control name="id_number" type="text" placeholder="Id Number" required />
-                </Form.Group>
-                <Form.Group className="mb-3 col-lg-6">
-                  <Form.Label>Nombres</Form.Label>
-                  <Form.Control name="first_Name" type="text" placeholder="Nombres" required />
-                </Form.Group>
-                <Form.Group className="mb-3 col-lg-6">
-                  <Form.Label>Apellidos</Form.Label>
-                  <Form.Control name="last_Name" type="text" placeholder="Apellidos" required />
+                  <Form.Control name="card" type="text" placeholder="Cedula" required />
                 </Form.Group>
               </Row>
+              <Form.Group className="mb-3 col-lg-6">
+                <Form.Label>Nombres</Form.Label>
+                <Form.Control name="name" type="text" placeholder="Nombres" required />
+              </Form.Group>
               <Form.Group className="mb-3">
                 <Form.Label>Correo Electronico</Form.Label>
                 <Form.Control name="email" type="email" placeholder="Correo Electronico" required />
@@ -67,6 +66,10 @@ const Register = () => {
                   onChange={phone => setNumber(phone)}
                   className="text-dark"
                 />
+                <Form.Group className="mb-3 col-lg-6">
+                  <Form.Label>Direccion</Form.Label>
+                  <Form.Control name="address" type="text" placeholder="Direccion" required />
+                </Form.Group>
               </Form.Group>
               <Form.Group className="mb-3">
                 <Form.Label>Contraseña</Form.Label>
@@ -76,7 +79,7 @@ const Register = () => {
                 type="submit"
                 className={`${theme ? 'bg-dark-primary text-black' : 'bg-light-primary'} m-auto d-block`}
                 disabled={loading}
-                style={{ border: 0 }}
+                style={{ border: 1 }}
               >
                 {loading ?
                   <>

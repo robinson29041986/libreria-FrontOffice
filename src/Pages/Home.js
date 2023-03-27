@@ -10,7 +10,7 @@ const Home = () => {
   const [searchInput, setSearchInput] = useState('');
   const [productData, setProductData] = useState([]);
 
-  async function getResponse() {
+  const getResponse = async () => {
     const res = await fetch('http://localhost:5000/products')
       .then(res => res.json());
     setProductData(await res);
