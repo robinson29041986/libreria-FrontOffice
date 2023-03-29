@@ -31,7 +31,7 @@ const Cart = () => {
                       justifyContent: 'center', alignItems: 'center'
                     }}>
                       <div style={{ padding: '.5rem' }}>
-                        <img src={`http://localhost:5000/public/uploads/${item.image}`} style={{ width: '8rem' }} alt={item.name} />
+                        <img src={`http://localhost:5000/public/uploads/${item.image}`} style={{ width: '5.9rem' }} alt={item.name} />
                       </div>
                     </div>
                   </td>
@@ -40,7 +40,12 @@ const Cart = () => {
                       {item.name}
                     </h6>
                   </td>
-                  <td>COP. {item.price}</td>
+                  <td>COP. {parseInt(item.price).toLocaleString('es-CO',
+                    {
+                      style: 'currency',
+                      currency: 'COP',
+                      minimumFractionDigits: 0
+                    })}</td>
                   <td>Cantidad ({item.quantity})</td>
                   <td>
                     <Button onClick={() => updateItemQuantity(item.id, item.quantity - 1)} className="ms-2">-</Button>
@@ -58,7 +63,12 @@ const Cart = () => {
             className={`${theme ? 'bg-light-black text-light' : 'bg-light text-balck'} justify-content-center w-100`}
           >
             <Col className="py-2">
-              <h4>Total Price: {cartTotal}</h4>
+              <h4>Precio Total: COP. {parseInt(cartTotal).toLocaleString('es-CO',
+                {
+                  style: 'currency',
+                  currency: 'COP',
+                  minimumFractionDigits: 0
+                })}</h4>
             </Col>
             <Col className="p-0" md={4}>
               <Button variant="danger"

@@ -35,7 +35,7 @@ const SignIn = () => {
         .finally(() => {
           setLoading(false);
           navigate('/', { replace: true })
-          alert('Login successfully');
+          /* alert('Login successfully'); */
         })
     }
   }

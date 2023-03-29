@@ -217,7 +217,7 @@ code {
 
 .bg-light-primary {
   background-color: var(--global--color-primary) !important;
-  color: var(--global--color-black) !important;
+  color: var(--global--color-white) !important;
 }
 
 .text-light-primary {

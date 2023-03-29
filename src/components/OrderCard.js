@@ -12,11 +12,11 @@ const OrderCard = (props) => {
       </Card.Header>
       <Row className="p-2">
         <Col xs={3} sm={2}>
-          <Card.Img variant="top" src={props.img} />
+          <Card.Img variant="top" src={props.image} />
         </Col>
         <Col>
           <Card.Body>
-            <Card.Title>{props.title}</Card.Title>
+            <Card.Title>{props.name}</Card.Title>
             <Card.Text>
               <Badge pill bg="success">
                 {props.deliveredDate}

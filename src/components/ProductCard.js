@@ -35,7 +35,12 @@ const ProductCard = (props) => {
           {name}
         </Card.Title>
         <Card.Title>
-          COP. <span className="h3">{price}</span>
+          COP. <span className="h3">{parseInt(price).toLocaleString('es-CO',
+            {
+              style: 'currency',
+              currency: 'COP',
+              minimumFractionDigits: 0
+            })}</span>
         </Card.Title>
         <Button
           onClick={() => addToCart()}
