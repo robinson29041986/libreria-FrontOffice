@@ -39,24 +39,24 @@ const ProductDetails = (props) => {
             ]}
           />
         </Col>
-        <Col xs={10} md={7} lg={7} className={`${theme ? 'text-light' : 'text-black'} product-details`}>
+        <Col xs={10} md={7} lg={7} className={`${theme ? 'text-light' : 'text-black'} product-details`} style={{ opacity: '0.8', fontWeight: '400' }}>
           <h1>{productData.name}</h1>
           <br />
           <p className="mt-3 h5" style={{ opacity: '0.8', fontWeight: '400' }}>
             {productData.description}
           </p>
           <br />
-          <b className={`${theme ? 'text-dark-primary' : 'text-light-primary'} h4 mt-3 d-block`}>
+          <b className={`${theme ? 'text-dark-primary' : 'text-light-primary'} h4 mt-3 d-block`} style={{ opacity: '0.8', fontWeight: '400' }}>
             <h4>Categoria: {productData.category_id}</h4>
           </b>
-          <b className={`${theme ? 'text-dark-primary' : 'text-light-primary'} h4 mt-3 d-block`}>
-            <h4>Autor: {productData.autor} </h4>
+          <b className={`${theme ? 'text-dark-primary' : 'text-light-primary'} h4 mt-3 d-block`} style={{ opacity: '0.8', fontWeight: '400' }}>
+            <h4>Autor: {productData.autor}</h4>
           </b>
-          <b className={`${theme ? 'text-dark-primary' : 'text-light-primary'} h4 mt-3 d-block`}>
+          <b className={`${theme ? 'text-dark-primary' : 'text-light-primary'} h4 mt-3 d-block`} style={{ opacity: '0.8', fontWeight: '400' }}>
             <h4>Isbn: {productData.isbn}</h4>
           </b>
-          <b className={`${theme ? 'text-dark-primary' : 'text-light-primary'} h4 mt-3 d-block`}>
-            COP. {parseInt(productData.price).toLocaleString('es-CO',
+          <b className={`${theme ? 'text-dark-primary' : 'text-light-primary'} h4 mt-3 d-block`} style={{ opacity: '0.8', fontWeight: '400' }}>
+            Precio: {parseInt(productData.price).toLocaleString('es-CO',
               {
                 style: 'currency',
                 currency: 'COP',
